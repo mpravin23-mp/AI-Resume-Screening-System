@@ -1,0 +1,599 @@
+/*==================================================
+        AI RESUME SCREENING DASHBOARD
+        Premium Glassmorphism UI
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+    color:#fff;
+}
+
+/*=========================
+VIDEO BACKGROUND
+=========================*/
+
+#bgVideo{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-2;
+
+}
+
+.bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+   
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    animation: bgBlink 0.2s ease-in-out infinite;
+}
+/*=========================
+DARK OVERLAY
+=========================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.68);
+
+    z-index:-1;
+
+}
+
+/*=========================
+CONTAINER
+=========================*/
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    padding-bottom:40px;
+
+}
+
+/*=========================
+TOPBAR
+=========================*/
+
+/*==============================
+TOPBAR
+==============================*/
+
+/*==============================
+TOPBAR GLASS
+==============================*/
+
+.topbar{
+
+    width:95%;
+
+    margin:25px auto;
+
+    padding:16px 28px;
+
+    background:rgba(15,25,45,.35);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+}
+
+/*==============================
+WELCOME GLASS
+==============================*/
+
+.welcome{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px 2px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    -webkit-backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:50px;
+
+    color:#00e5ff;
+
+    font-size:24px;
+
+    font-weight:70;
+
+    transition:.35s;
+
+}
+.welcome-card{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    padding:15px 24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:18px;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.35);
+
+}
+
+.welcome-icon{
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:28px;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+.welcome-text{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.welcome-text small{
+
+    color:#c8d0d8;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+}
+
+.welcome-text span{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#00e5ff;
+
+}
+
+.welcome:hover{
+
+    border-color:rgba(0,229,255,.45);
+
+    box-shadow:
+        0 0 20px rgba(0,229,255,.20);
+
+    transform:translateY(-2px);
+
+}
+/*=========================
+COMMON CARD
+=========================*/
+
+.card{
+
+    background:rgba(255,255,255,.07);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:22px;
+
+    color:white;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(0,229,255,.45);
+
+    box-shadow:
+
+    0 0 25px rgba(0,229,255,.18),
+
+    0 15px 40px rgba(0,0,0,.35);
+
+}
+
+/*=========================
+STAT CARDS
+=========================*/
+
+.stat-card{
+
+    text-align:center;
+
+    padding:28px;
+
+}
+
+.stat-card h6{
+
+    color:#d5d5d5;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+
+}
+
+.stat-card h2{
+
+    color:#00e5ff;
+
+    font-size:38px;
+
+    font-weight:bold;
+
+}
+
+/* Remove Bootstrap Colors */
+
+.bg1,
+.bg2,
+.bg3,
+.bg4{
+
+    background:transparent !important;
+
+}
+
+/*=========================
+UPLOAD CARD
+=========================*/
+
+.upload-card{
+
+    padding:35px;
+
+}
+
+.upload-card h4{
+
+    color:#00e5ff;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    margin-bottom:30px;
+
+}
+
+/*=========================
+LABELS
+=========================*/
+
+.form-label{
+
+    color:white;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+/*=========================
+INPUTS
+=========================*/
+
+.form-control{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    border-radius:15px;
+
+    padding:14px;
+
+}
+
+.form-control::placeholder{
+
+    color:#cfcfcf;
+
+}
+
+.form-control:focus{
+
+    background:rgba(255,255,255,.10);
+
+    border-color:#00e5ff;
+
+    color:white;
+
+    box-shadow:
+
+    0 0 18px rgba(0,229,255,.30);
+
+}
+
+textarea{
+
+    resize:none;
+
+}
+
+input[type=file]{
+
+    padding:15px;
+
+}
+
+/*=========================
+GLASS BUTTON
+=========================*/
+
+.btn{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    color:white;
+
+    border-radius:14px;
+
+    padding:13px 28px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn:hover{
+
+    color:white;
+
+    background:rgba(0,229,255,.12);
+
+    border-color:#00e5ff;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 0 18px rgba(0,229,255,.25);
+
+}
+
+.btn:active{
+
+    transform:scale(.97);
+
+}
+
+.btn:disabled{
+
+    opacity:.5;
+
+}
+
+/* Analyze Button */
+
+.upload-card .btn-success{
+
+    width:100%;
+
+    height:58px;
+
+    font-size:20px;
+
+}
+
+/*=========================
+LATEST ATS
+=========================*/
+
+.latest-box{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-left:4px solid #00e5ff;
+
+    border-radius:18px;
+
+    color:white;
+
+}
+
+.latest-box h5{
+
+    color:#00e5ff;
+
+    margin-bottom:12px;
+
+}
+
+/*=========================
+BOTTOM BUTTONS
+=========================*/
+
+.mt-4 .btn{
+
+    min-width:190px;
+
+    margin-right:12px;
+
+    margin-bottom:12px;
+
+}
+
+/*=========================
+LINKS
+=========================*/
+
+a{
+
+    text-decoration:none;
+
+}
+
+/*=========================
+SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#101010;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00e5ff;
+
+    border-radius:20px;
+
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+.topbar{
+
+    width:100%;
+
+}
+
+.welcome{
+
+    font-size:24px;
+
+}
+
+.upload-card{
+
+    padding:25px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.topbar .container{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.welcome{
+
+    text-align:center;
+
+}
+
+.mt-4 .btn{
+
+    width:100%;
+
+}
+
+.stat-card{
+
+    margin-bottom:20px;
+
+}
+
+.upload-card h4{
+
+    font-size:24px;
+
+}
+
+}

@@ -1,0 +1,192 @@
+/* ===========================
+   ADMIN LOGIN
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    overflow:hidden;
+    position:relative;
+}
+
+/* Animated Glow */
+
+body::before,
+body::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::before{
+    background:#00d4ff;
+    top:-100px;
+    left:-120px;
+}
+
+body::after{
+    background:#7b2ff7;
+    bottom:-100px;
+    right:-120px;
+}
+
+/* Login Container */
+
+.login-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* Glass Card */
+
+.login-card{
+
+    width:430px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:22px;
+
+    padding:40px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+    color:#fff;
+}
+
+/* Heading */
+
+.login-card h2{
+    font-weight:600;
+}
+
+.login-card p{
+    color:#d9d9d9 !important;
+}
+
+/* Icon */
+
+.display-3{
+    color:#4fc3ff !important;
+}
+
+/* Labels */
+
+.form-label{
+    color:#fff;
+    font-weight:500;
+}
+
+/* Inputs */
+
+.form-control{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    color:#fff;
+
+    border-radius:12px;
+
+    height:48px;
+}
+
+.form-control:focus{
+
+    background:rgba(255,255,255,.12);
+
+    color:#fff;
+
+    border-color:#4fc3ff;
+
+    box-shadow:0 0 15px rgba(79,195,255,.35);
+}
+
+.form-control::placeholder{
+    color:#d7d7d7;
+}
+
+/* Buttons */
+
+.btn-primary{
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(90deg,#00c6ff,#0072ff);
+
+    font-weight:600;
+
+    height:48px;
+
+    transition:.3s;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(0,114,255,.4);
+}
+
+/* Home Button */
+
+.btn-outline-secondary{
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    color:#fff;
+}
+
+.btn-outline-secondary:hover{
+
+    background:rgba(255,255,255,.15);
+
+    border-color:#fff;
+
+    color:#fff;
+}
+
+/* Alert */
+
+.alert{
+    border-radius:12px;
+}
+
+/* Responsive */
+
+@media(max-width:576px){
+
+.login-card{
+    width:100%;
+    padding:30px 25px;
+}
+
+}

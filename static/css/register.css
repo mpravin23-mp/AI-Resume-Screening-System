@@ -1,0 +1,440 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial,Helvetica,sans-serif;
+    height:100vh;
+    overflow:hidden;
+
+}
+
+/* ===========================
+   BACKGROUND VIDEO
+=========================== */
+
+#bgVideo{
+
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    min-width:100%;
+    min-height:100%;
+
+    width:auto;
+    height:auto;
+
+    transform:translate(-50%,-50%);
+
+    object-fit:cover;
+
+    z-index:-2;
+
+}
+
+/* ===========================
+   DARK OVERLAY
+=========================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:-1;
+
+}
+
+/* ===========================
+   CENTER CONTAINER
+=========================== */
+
+.container{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.card{
+
+    position:relative;
+
+    width:540px;
+
+    max-width:95%;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    background:rgba(10,20,45,.35);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.55),
+        0 0 25px rgba(0,255,255,.20);
+
+    color:white;
+
+    animation:floatCard 5s ease-in-out infinite;
+
+}
+
+/* Glowing Border */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:25px;
+
+    padding:1px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(0,255,255,.8),
+        rgba(0,119,255,.35),
+        rgba(255,255,255,.15)
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    pointer-events:none;
+
+}
+
+/* Hover */
+
+.card:hover{
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.6),
+        0 0 35px rgba(0,255,255,.35);
+
+    transition:.4s;
+
+}
+
+/* Floating Animation */
+
+@keyframes floatCard{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.card h3{
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    margin-bottom:30px;
+
+    color:#00e5ff;
+
+    text-shadow:0 0 15px rgba(0,255,255,.5);
+
+}
+
+/* ===========================
+   LABEL
+=========================== */
+
+label{
+
+    color:white;
+
+    font-weight:600;
+
+    margin-bottom:6px;
+
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+.form-control{
+
+    height:54px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    color:white;
+
+    border-radius:12px;
+
+}
+
+.form-control::placeholder{
+
+    color:#d8d8d8;
+
+}
+
+.form-control:focus{
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    border-color:#00d9ff;
+
+    box-shadow:0 0 15px rgba(0,217,255,.35);
+
+}
+
+.form-control:disabled{
+
+    background:rgba(255,255,255,.05);
+
+    color:#bbbbbb;
+
+}
+
+/* ===========================
+   PASSWORD BUTTON
+=========================== */
+
+.input-group .btn{
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.15);
+
+}
+
+.input-group .btn:hover{
+
+    background:#00d9ff;
+
+    color:black;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+#sendBtn{
+
+    height:52px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(45deg,#0d6efd,#00b4ff);
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+#sendBtn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 0 20px rgba(13,110,253,.45);
+
+}
+
+.btn-warning{
+
+    height:52px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    background:linear-gradient(45deg,#ffb300,#ff8800);
+
+    color:white;
+
+}
+
+.btn-warning:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 0 20px rgba(255,193,7,.45);
+
+}
+
+.btn-success{
+
+    height:55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(45deg,#00b45c,#00d084);
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn-success:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 0 20px rgba(0,212,132,.45);
+
+}
+
+.btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+/* ===========================
+   ALERT
+=========================== */
+
+.alert{
+
+    border-radius:12px;
+
+}
+
+/* ===========================
+   LOGIN LINK
+=========================== */
+
+.text-center{
+
+    color:white;
+
+}
+
+.text-center a{
+
+    color:#00d9ff;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+.text-center a:hover{
+
+    color:white;
+
+    text-shadow:0 0 10px cyan;
+
+}
+
+/* ===========================
+   SPINNER
+=========================== */
+
+.spinner-border{
+
+    vertical-align:middle;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.card{
+
+    width:95%;
+
+    padding:25px;
+
+}
+
+.card h3{
+
+    font-size:28px;
+
+}
+
+}

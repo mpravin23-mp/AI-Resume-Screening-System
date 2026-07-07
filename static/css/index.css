@@ -1,0 +1,396 @@
+/* =========================
+   FULL PAGE BACKGROUND
+========================= */
+.home-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background-color: #060d18;
+    background-image: url("../images/ai-bg.png");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+    
+
+}
+
+@keyframes bgBlink {
+    0%, 1000% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(0.500);
+    }
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.home-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 40px;
+}
+
+/* =========================
+   GLASS PANEL — pinned left, fades/slides in on load
+========================= */
+.hero-panel {
+    max-width: 780px;
+    margin: 0;
+
+    background: rgba(6, 12, 24, 0.72);
+    border: 1px solid rgba(34, 211, 238, 0.15);
+    border-radius: 22px;
+    padding: 40px 45px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    animation: panelFadeIn 0.9s ease-out forwards;
+    
+}
+
+@keyframes panelFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =========================
+   HERO TEXT — staggered fade-in
+========================= */
+.hero-text {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 15px;
+
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.3s forwards;
+}
+
+.hero-title .highlight {
+    color: #22d3ee;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   BUTTONS — fade-in + hover lift
+========================= */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.7s forwards;
+}
+
+.button-group a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease;
+}
+
+.button-group a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(34, 211, 238, 0.25);
+}
+
+/* Divider */
+.hero-divider {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
+    margin: 0 0 25px 0;
+
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 0.8s forwards;
+}
+
+/* =========================
+   FEATURE CARDS — fade-in + gentle float + hover glow
+========================= */
+.feature-card {
+    text-align: center;
+    padding: 22px 14px;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(34, 211, 238, 0.15);
+    border-radius: 16px;
+
+    color: white;
+
+    opacity: 0;
+    animation:
+        fadeUp 0.8s ease-out 0.9s forwards,
+        floatCard 5s ease-in-out 1.8s infinite;
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+}
+
+/* Stagger each card slightly */
+.row.g-3 > div:nth-child(1) .feature-card { animation-delay: 0.9s, 1.8s; }
+.row.g-3 > div:nth-child(2) .feature-card { animation-delay: 1.05s, 2.0s; }
+.row.g-3 > div:nth-child(3) .feature-card { animation-delay: 1.2s, 2.2s; }
+
+@keyframes floatCard {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.25);
+    border-color: rgba(34, 211, 238, 0.5);
+    animation-play-state: paused; /* stop float on hover so it doesn't fight the hover-lift */
+}
+
+.feature-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: #22d3ee;
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+}
+
+.feature-card h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    margin-top: 30px;
+    text-align: center;
+
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out 1.4s forwards;
+}
+
+.footer hr {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    margin: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+    .home-container {
+        padding: 20px;
+    }
+
+    .hero-panel {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-text,
+    .button-group {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .row.g-3 > div {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+}
+
+.home-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background-color: #060d18;
+    background-image: url("../images/ai-bg.png");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Flicker overlay — subtle tech glitch effect */
+.home-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(34, 211, 238, 0.05);
+    z-index: 1;
+    pointer-events: none;
+    animation: bgFlicker 4s infinite;
+}
+
+@keyframes bgFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 10;
+    }
+    20%, 22%, 24%, 55% {
+        opacity: 0.4;
+    }
+}
+
+.home-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background-color: #060d18;
+    background-image: url("../images/ai-bg.png");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    
+}
+
+/* =========================
+   PAGE WRAPPER (no image here anymore)
+========================= */
+.home-page {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background-color: #060d18;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+    animation: bgBlink 10s ease-in-out infinite;
+    
+
+}
+
+/* =========================
+   BACKGROUND IMAGE LAYER — this is what blinks
+========================= */
+.bg-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background-image: url("../images/ai-bg.png");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    animation: bgBlink 0.2s ease-in-out infinite;
+}
+@keyframes bgBlink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.75;
+    }
+}
+bg-layer {
+    animation: bgBlink 0.2s ease-in-out infinite;
+}

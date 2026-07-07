@@ -1,0 +1,133 @@
+/* ===========================
+   Google Font
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===========================
+   Background
+=========================== */
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    overflow-x:hidden;
+    color:#fff;
+}
+
+/* Animated circles */
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::before{
+    background:#00d4ff;
+    top:-100px;
+    left:-120px;
+}
+
+body::after{
+    background:#7b2ff7;
+    bottom:-120px;
+    right:-120px;
+}
+
+/* ===========================
+   Sidebar
+=========================== */
+
+.sidebar{
+    min-height:100vh;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-right:1px solid rgba(255,255,255,.18);
+
+    box-shadow:0 8px 32px rgba(0,0,0,.35);
+
+    padding:30px 20px;
+}
+
+.sidebar h3{
+    color:#fff;
+    font-weight:600;
+    margin-bottom:30px;
+}
+
+.sidebar a{
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 15px;
+    margin-bottom:10px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.sidebar a:hover{
+    background:rgba(255,255,255,.15);
+    transform:translateX(6px);
+}
+
+/* ===========================
+   Content
+=========================== */
+
+.content{
+    padding:35px;
+}
+
+.content h2{
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+/* ===========================
+   Dashboard Cards
+=========================== */
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:20px;
+    color:#fff;
+    transition:.35s;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+.card-body{
+    padding:30px;
+}
+
+.card h5{
+    font-weight:500;
+    opacity:.9;
+}
+
+.card h2{
+    margin-top:10px;
+    font-size:40px;
+    font-weight:700;
+}

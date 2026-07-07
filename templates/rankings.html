@@ -1,0 +1,19 @@
+<h2>🏆 Top Resume Rankings</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>File</th>
+        <th>ATS Score</th>
+        <th>Date</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}%</td>
+        <td>{{ row[3] }}</td>
+    </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,374 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+    overflow:hidden;
+}
+
+/* Background Glow */
+body::before{
+    content:'';
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:#60a5fa;
+    border-radius:50%;
+    filter:blur(180px);
+    top:-120px;
+    left:-120px;
+    opacity:.35;
+}
+
+body::after{
+    content:'';
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:#38bdf8;
+    border-radius:50%;
+    filter:blur(180px);
+    right:-100px;
+    bottom:-120px;
+    opacity:.25;
+}
+
+.container{
+    position:relative;
+    z-index:1;
+    max-width:850px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:60px 40px;
+    text-align:center;
+    box-shadow:0 15px 45px rgba(0,0,0,.3);
+    border:1px solid rgba(255,255,255,.2);
+}
+
+h1{
+    font-size:42px;
+    font-weight:700;
+    color:#ffffff !important;
+    margin-bottom:15px;
+}
+
+p{
+    color:#e5e7eb;
+    font-size:20px;
+    margin-bottom:40px;
+}
+
+.btn{
+    min-width:140px;
+    margin:10px;
+    padding:12px 24px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s ease;
+    border:none;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+.btn-primary{
+    background:#2563eb;
+}
+
+.btn-success{
+    background:#16a34a;
+}
+
+.btn-warning{
+    background:#f59e0b;
+    color:white;
+}
+
+.btn-danger{
+    background:#dc2626;
+}
+
+.text-primary{
+    color:#ffffff !important;
+}
+
+@media(max-width:768px){
+
+    .container{
+        margin:20px;
+        padding:40px 25px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    p{
+        font-size:17px;
+    }
+
+    .btn{
+        width:100%;
+        margin:8px 0;
+    }
+}
+
+/* ========================= */
+/* Animations */
+/* ========================= */
+
+.hero-title{
+    animation:slideDown 1s ease;
+}
+
+.hero-subtitle{
+    animation:fadeIn 2s ease;
+}
+
+.button-group{
+    animation:slideUp 1.2s ease;
+}
+
+/* Floating Robot */
+
+.ai-icon{
+
+    font-size:80px;
+
+    animation:float 3s ease-in-out infinite;
+
+    margin-bottom:20px;
+}
+
+/* Feature Cards */
+
+.feature-card{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    color:white;
+
+    transition:.4s;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    height:100%;
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+    background:rgba(255,255,255,.18);
+}
+
+.feature-icon{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+}
+
+.footer{
+
+    color:#dbeafe;
+
+    font-size:15px;
+
+    animation:fadeIn 3s;
+}
+
+/* Button Click Effect */
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:100%;
+
+    background:rgba(255,255,255,.2);
+
+    top:0;
+
+    left:50%;
+
+    transition:.4s;
+}
+
+.btn:hover::after{
+
+    width:120%;
+
+    left:-10%;
+}
+
+/* Animations */
+
+@keyframes slideDown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes slideUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+
+/* Background Robot */
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+    overflow:hidden;
+    position:relative;
+}
+
+/* Robot Background */
+body::after{
+    content:"";
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    width:550px;
+    height:550px;
+
+    transform:translate(-50%,-50%);
+
+    background:url("../images/ai-bg.png") no-repeat center;
+    background-size:contain;
+
+    opacity:0.08;      /* Change: 0.03 to 0.15 */
+
+    z-index:0;
+
+    pointer-events:none;
+ animation: bgBlink 2s ease-in-out infinite;
+    animation:floatRobot 6s ease-in-out infinite;
+}
+
+/* Keep content above robot */
+.container{
+    position:relative;
+    z-index:2;
+}
+@keyframes floatRobot{
+
+    0%{
+        transform:translate(-50%,-50%);
+    }
+
+    50%{
+        transform:translate(-50%,-53%);
+    }
+
+    100%{
+        transform:translate(-50%,-50%);
+    }
+
+}

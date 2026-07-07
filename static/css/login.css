@@ -1,0 +1,173 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    height:100vh;
+
+    background:url("../images/ai-login-bg.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    overflow:hidden;
+}
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+}
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.login-card{
+
+    width:1000px;
+
+    display:flex;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(0,0,0,.35);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
+
+}
+
+.left{
+
+    width:55%;
+
+    color:white;
+
+    padding:70px;
+
+}
+
+.left h1{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:#3fa9ff;
+
+}
+
+.left h2{
+
+    margin-top:25px;
+
+    font-size:45px;
+
+}
+
+.left p{
+
+    margin-top:20px;
+
+    line-height:30px;
+
+    color:#ddd;
+
+    font-size:18px;
+
+}
+
+.right{
+
+    width:45%;
+
+    background:rgba(20,20,20,.65);
+
+    padding:60px;
+
+}
+
+.right h3{
+
+    color:white;
+
+    margin-bottom:35px;
+
+}
+
+.form-control{
+
+    height:55px;
+
+    background:rgba(255,255,255,.1);
+
+    border:none;
+
+    color:white;
+
+}
+
+.form-control::placeholder{
+
+    color:#ccc;
+
+}
+
+.form-control:focus{
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    box-shadow:none;
+
+}
+
+.btn{
+
+    height:55px;
+
+    border-radius:10px;
+
+    font-size:18px;
+
+}
+
+a{
+
+    color:#4da3ff;
+
+    text-decoration:none;
+
+}
+
+.text-center{
+
+    color:white;
+}

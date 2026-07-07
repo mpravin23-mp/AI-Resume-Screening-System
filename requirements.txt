@@ -1,0 +1,9 @@
+Flask
+Flask-MySQLdb
+Flask-Mail
+scikit-learn
+numpy
+pandas
+nltk
+PyPDF2
+reportlab

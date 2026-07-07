@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Environment files
+.env
+
+# Uploads (resume PDFs)
+uploads/
+
+# Generated PDF reports
+static/*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db

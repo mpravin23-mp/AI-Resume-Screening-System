@@ -1,0 +1,33 @@
+SKILLS = [
+
+    "python",
+    "java",
+    "c",
+    "c++",
+    "html",
+    "css",
+    "javascript",
+    "bootstrap",
+    "flask",
+    "django",
+    "mysql",
+    "sql",
+    "mongodb",
+    "git",
+    "github",
+    "docker",
+    "react",
+    "nodejs",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "machine learning",
+    "deep learning",
+    "nlp",
+    "communication",
+    "leadership",
+    "problem solving",
+    "teamwork",
+    "adaptability"
+
+]
