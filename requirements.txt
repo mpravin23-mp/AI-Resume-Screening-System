@@ -8,3 +8,4 @@ nltk
 PyPDF2
 reportlab
 gunicorn
+pdfplumber
