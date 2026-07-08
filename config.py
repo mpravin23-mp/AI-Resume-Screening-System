@@ -1,6 +1,6 @@
 # Database Configuration
 
-MYSQL_HOST = "localhost"
-MYSQL_USER = "root"
-MYSQL_PASSWORD = "admin"
-MYSQL_DB = "resume_screening"
+MYSQL_HOST = "sql10.freesqldatabase.com"
+MYSQL_USER = "sql10832506"
+MYSQL_PASSWORD = "MPr@veen2312"
+MYSQL_DB = "sql10832506"
