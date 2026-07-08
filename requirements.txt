@@ -1,9 +1,12 @@
 Flask
 Flask-MySQLdb
 Flask-Mail
-scikit-learn
+gunicorn
+mysqlclient
+nltk
 numpy
 pandas
-nltk
+pdfplumber
 PyPDF2
 reportlab
+scikit-learn
