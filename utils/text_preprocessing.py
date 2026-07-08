@@ -26,6 +26,9 @@ def clean_text(text):
     words = text.split()
 
     # Remove stopwords and lemmatize
+
+
+    
     cleaned_words = []
 
     for word in words:
