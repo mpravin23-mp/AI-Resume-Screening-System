@@ -17,8 +17,8 @@ from utils.ats_score import calculate_ats_score
 from utils.suggestions import generate_suggestions
 from utils.pdf_report import generate_pdf
 from flask_mail import Mail, Message
-import random, nltk
-
+import random
+import nltk
 
 nltk.download('punkt')
 nltk.download('stopwords')
