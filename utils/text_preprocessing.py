@@ -4,12 +4,18 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-stop_words = set(stopwords.words("english"))
+# Download NLTK data if not available
+try:
+    stop_words = set(stopwords.words("english"))
+except LookupError:
+    nltk.download("stopwords")
+    nltk.download("wordnet")
+    stop_words = set(stopwords.words("english"))
+
 lemmatizer = WordNetLemmatizer()
 
 
 def clean_text(text):
-
     # Convert to lowercase
     text = text.lower()
 
@@ -23,11 +29,7 @@ def clean_text(text):
     cleaned_words = []
 
     for word in words:
-
         if word not in stop_words:
-
-            cleaned_words.append(
-                lemmatizer.lemmatize(word)
-            )
+            cleaned_words.append(lemmatizer.lemmatize(word))
 
     return " ".join(cleaned_words)
