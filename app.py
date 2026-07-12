@@ -62,8 +62,8 @@ app.config["MAIL_DEFAULT_SENDER"] = (
     "airesumescreening23@gmail.com"
 )
 
+app.config["MAIL_TIMEOUT"] = 10
 mail = Mail(app)
-# Home Page
 
 
 @app.route("/")
@@ -166,22 +166,16 @@ Regards,
 AI Resume Screening Team
         """
     try:
-        mail.send(msg)
-        print("Forgot Password OTP Sent")
-
-        return {
-        "success": True,
-        "message": "OTP Sent Successfully."
-    }
-
+         mail.send(msg)
     except Exception as e:
-        print("Mail Error:", e)
-
+        import traceback
+        traceback.print_exc()
     return {
         "success": False,
         "message": str(e)
     }
 
+   
 
 @app.route("/update_password", methods=["POST"])
 def update_password():

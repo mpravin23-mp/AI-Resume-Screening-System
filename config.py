@@ -1,6 +1,7 @@
-# Database Configuration
+app.config["MYSQL_HOST"] = os.environ.get("MYSQL_HOST")
+app.config["MYSQL_USER"] = os.environ.get("MYSQL_USER")
+app.config["MYSQL_PASSWORD"] = os.environ.get("MYSQL_PASSWORD")
+app.config["MYSQL_DB"] = os.environ.get("MYSQL_DB")
 
-MYSQL_HOST = "sql10.freesqldatabase.com"
-MYSQL_USER = "sql10832506"
-MYSQL_PASSWORD = "QaxT4iAMRb"
-MYSQL_DB = "sql10832506"
+app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD")
