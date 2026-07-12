@@ -191,47 +191,46 @@ Already have an account?
 
 <script>
 
-function sendOTP(){
+function sendOTP() {
 
-let btn=document.getElementById("sendBtn");
+    let btn = document.getElementById("sendBtn");
+    let loader = document.getElementById("loader");
+    let text = document.getElementById("sendText");
 
-document.getElementById("loader").classList.remove("d-none");
+    btn.disabled = true;
+    loader.classList.remove("d-none");
+    text.innerHTML = "Sending...";
 
-document.getElementById("sendText").innerHTML="Sending...";
-
-btn.disabled=true;
-
-fetch("/send_register_otp",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-
-email:document.getElementById("email").value
-
-})
-
-})
-
-.then(res=>res.json())
-
-.then(data=>{
-
-alert(data.message);
-
-btn.disabled=false;
-
-document.getElementById("loader").classList.add("d-none");
-
-document.getElementById("sendText").innerHTML="Send OTP";
-
-});
+    fetch("/send_register_otp", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email: document.getElementById("email").value
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("HTTP Error: " + response.status);
+        }
+        return response.json();
+    })
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error(error);
+        alert("Error: " + error.message);
+    })
+    .finally(() => {
+        btn.disabled = false;
+        loader.classList.add("d-none");
+        text.innerHTML = "Send OTP";
+    });
 
 }
+
 
 function verifyOTP(){
 

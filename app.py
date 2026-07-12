@@ -580,7 +580,10 @@ AI Resume Screening Team
 @app.route("/send_register_otp", methods=["POST"])
 def send_register_otp():
 
+    print("========== SEND REGISTER OTP ==========")
+
     data = request.get_json()
+    print("Received Data:", data)
 
     email = data["email"]
 
@@ -592,29 +595,27 @@ def send_register_otp():
     )
 
     user = cursor.fetchone()
-
     cursor.close()
 
     if user:
-
         return {
             "success": False,
             "message": "Email already registered."
         }
 
-    otp = str(random.randint(100000,999999))
+    otp = str(random.randint(100000, 999999))
 
     session["register_otp"] = otp
     session["register_email"] = email
 
+    print("Generated OTP:", otp)
+
     msg = Message(
-        "Registration OTP",
-        sender=app.config["MAIL_USERNAME"],
+        subject="Registration OTP",
         recipients=[email]
     )
 
     msg.body = f"""
-
 Hi,
 
 Your Registration OTP is:
@@ -627,24 +628,25 @@ AI Resume Screening System
 """
 
     try:
-
+        print("Sending email to:", email)
         mail.send(msg)
-
-        print("Registration OTP Sent")
+        print("Email sent successfully!")
 
         return {
-        "success": True,
-        "message": "OTP Sent Successfully."
-    }
+            "success": True,
+            "message": "OTP Sent Successfully."
+        }
 
     except Exception as e:
+        import traceback
+        traceback.print_exc()
 
-        print("Mail Error:", e)
-
-    return {
-        "success": False,
-        "message": str(e)
-    }
+        return {
+            "success": False,
+            "message": str(e)
+        }
+    
+    
 @app.route("/verify_register_otp", methods=["POST"])
 def verify_register_otp():
 
